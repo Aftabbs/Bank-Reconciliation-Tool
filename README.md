@@ -7,7 +7,7 @@ This project matches rows from your **bank statement** with rows from your **own
 ## What’s in this folder
 
 ```
-AI Engineer Assignment/
+Bank Reconcillation Tool/
 ├── bank_statements.csv       # Bank’s list of transactions (input)
 ├── check_register.csv        # Your list of transactions (input)
 ├── config.py                 # Paths and settings (tolerance, thresholds)
@@ -15,10 +15,6 @@ AI Engineer Assignment/
 ├── requirements.txt          # Python packages to install
 ├── .gitignore
 ├── README.md                 # This file
-├── PREP_README.md            # Full assignment + implementation notes for reviewers
-├── ANALYSIS.md               # Performance, design choices, limitations
-├── validated_pairs.json      # Saved after you accept pairs (created when you use --review)
-├── experiment_results.json   # Written by run_experiments.py (if you run it)
 ├── src/
 │   ├── __init__.py
 │   ├── load_data.py          # Read CSVs, normalize types/dates, build term lists
@@ -26,11 +22,7 @@ AI Engineer Assignment/
 │   ├── ml_matching.py        # Match remaining rows using SVD-style retrieval
 │   ├── evaluation.py        # Precision, recall, F1
 │   └── workflow.py          # Run matching, load/save validated pairs
-└── tests/                    # Unit tests (optional)
-    ├── test_load_data.py
-    ├── test_unique_amount_matching.py
-    ├── test_evaluation.py
-    └── test_ml_matching.py
+
 ```
 
 `run_experiments.py` may exist at the project root; it runs learning-curve and category experiments and writes `experiment_results.json`.
@@ -108,8 +100,4 @@ Edit **config.py** to adjust:
 
 For this dataset, the correct pair for a bank row is the register row with the same number in the id (e.g. B0084 goes with R0084). That mapping is used **only to compute precision/recall/F1**. The matching logic never looks at ids; it only uses amounts, dates, and the text in descriptions.
 
----
-
-## More detail for reviewers
-
-See **PREP_README.md** for: what the assignment asked for, how it was implemented step by step, how to read the outputs, how evaluation works, and answers to common reviewer questions.
+--
