@@ -2,7 +2,7 @@
 
 This project matches rows from your **bank statement** with rows from your **own records** (check register). Both files list the same real transactions, but with different wording and dates. The tool figures out which line in one file goes with which line in the other.
  
----
+--- 
 
 ## What’s in this folder
 
